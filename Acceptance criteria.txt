@@ -1,0 +1,14 @@
+Acceptance criteria
+1. Implement deep menu with js.
+  - mock data located at deep.js
+  - using js for this task, no html
+
+2. Implement deep menu with angular
+  - create simple angular project and implement this requirement
+
+
+*Note
+  - write clean code
+  - design need to be the same with requirement
+  - using scss for styling
+  - follow html, css, js rule at: https://codeguide.co/

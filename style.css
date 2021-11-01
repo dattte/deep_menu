@@ -1,0 +1,53 @@
+body {
+  background-color: rgb(238,238,238);
+  color: rgb(119,119,119);
+}
+
+.d-flex {
+  display: flex;
+}
+
+li {
+  background-color: white;
+  list-style-type: none;
+  width: 400px;
+  border-color: transparent;
+  border-style: solid;
+  border-top: 10px;
+  border-bottom: 10px;
+}
+
+.item:hover {
+  color: rgb(230,125,34);
+  border-color: rgb(230,125,34);
+}
+
+.child {
+  display: none;
+}
+
+.item:hover > .child {
+  display: block;
+}
+
+.icon {
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+.far, .fa, .fas {
+  font-size: 35px;
+}
+
+.content {
+  margin: 10px 20px;
+}
+
+.content h2 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.content p {
+  margin: 5px 0;
+}
