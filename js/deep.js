@@ -101,8 +101,7 @@ let menu = (arg) =>
                         <div class="show">${subMenu(elem.children)}</div>
                     </div>
                     <span class="arrow"></span>
-              </li>
-              `
+              </li>`
             : `<li class="${elem.isActive === true ? 'border' : ''}">
                 <span class="${elem.isActive === true ? 'arrow-left' : ''}"></span>
                     <div class="d-flex item">
