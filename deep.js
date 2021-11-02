@@ -89,25 +89,33 @@ let menu = (arg) =>
     `<ul>
     ${arg.map(elem =>
         elem.children ?
-            `<li class="d-flex item">
-            <div class="icon">
-              <i class="${elem.icon}"></i>
-            </div>
-            <div class="content">
-                <h2>${elem.title}</h2>
-                <p>${elem.subTitle}</p>
-            </div>
-          </li>
-       <li>${subMenu(elem.children)}</li>`
-            : `<li class="d-flex item">
-            <div class="icon">
-              <i class="${elem.icon}"></i>
-            </div>
-            <div class="content">
-                <h2>${elem.title}</h2>
-                <p>${elem.subTitle}</p>
-            </div>
-          </li>`
+            `<li>
+                    <div class="d-flex item child">
+                        <div class="icon">
+                        <i class="${elem.icon}"></i>
+                        </div>
+                        <div class="content">
+                            <h2>${elem.title}</h2>
+                            <p>${elem.subTitle}</p>
+                        </div>
+                        <div class="show">${subMenu(elem.children)}</div>
+                    </div>
+                    <span class="arrow"></span>
+              </li>
+              `
+            : `<li class="${elem.isActive === true ? 'border' : ''}">
+                <span class="${elem.isActive === true ? 'arrow-left' : ''}"></span>
+                    <div class="d-flex item">
+                        <div class="icon">
+                        <i class="${elem.icon}"></i>
+                        </div>
+                        <div class="content">
+                            <h2>${elem.title}</h2>
+                            <p>${elem.subTitle}</p>
+                        </div>
+                    </div>
+                <span class="${elem.isActive === true ? 'arrow-right' : ''}"></span>
+            </li>`
     ).join('')}
     </ul>`
 
@@ -115,32 +123,43 @@ let subMenu = (arg) =>
     `<ul>
     ${arg.map(elem =>
         elem.children ?
-            `<li class="d-flex item">
-            <div class="icon">
-              <i class="${elem.icon}"></i>
-            </div>
-            <div class="content">
-                <h2>${elem.title}</h2>
-            </div>
-          </li>
-          <li class="child">${subMenu(elem.children)}</li>`
-            : `<li class="d-flex item">
-            <div class="icon">
-              <i class="${elem.icon}"></i>
-            </div>
-            <div class="content">
-                <h2>${elem.title}</h2>
-            </div>
-          </li>`
+            `<li>
+                <div class="d-flex item child">
+                    <div class="icon">
+                    <i class="${elem.icon}"></i>
+                    </div>
+                    <div class="content">
+                        <h2>${elem.title}</h2>
+                    </div>
+                    <div class="show">${subMenu(elem.children)}</div>
+                </div>
+                <span class="arrow"></span>
+              </li>`
+            : `<li>
+                <div class="d-flex item">
+                    <div class="icon">
+                    <i class="${elem.icon}"></i>
+                    </div>
+                    <div class="content">
+                        <h2>${elem.title}</h2>
+                    </div>
+                </div>
+            </li>`
     ).join('')}
     </ul>`
-
+let search = 
+    `<li>
+        <div class="search">
+            <input type="text" placeholder="search..."/>
+            <i class="fas fa-search"></i>
+        </div>
+    </li>`
 const container = document.createElement('div');
 container.className = 'container';
-const result = menu(deepMenu)
+const result = menu(deepMenu);
 let frag = document.createRange().createContextualFragment(result);
+let searchbtn = document.createRange().createContextualFragment(search);
 container.appendChild(frag);
-
 const body = document.getElementsByTagName('body')[0];
 body.appendChild(container);
-
+document.getElementsByTagName('ul')[0].appendChild(searchbtn);
