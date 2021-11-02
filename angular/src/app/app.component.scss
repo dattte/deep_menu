@@ -80,9 +80,11 @@ ul {
 }
 
 .show {
-  display: none;
+  position: absolute;
+  right: -400px;
   opacity: 0;
-  transition: all 2s ease 2s;
+  z-index: 999;
+  transition:all 0.5s ease-in-out 0s;
 }
 
 .arrow-left, .arrow-right {
@@ -109,12 +111,12 @@ ul {
 
 .arrow {
   z-index: 99;
-  display: inline-block;
+  transition:all 0.5s ease-in-out 0s;
   position: absolute;
   top: 30px;
   color: #e67d22;
-  display: none;
-  right: 0;
+  opacity: 0;
+  right: 2px;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -123,14 +125,13 @@ ul {
 }
 
 .child:hover~span.arrow {
-  display: inline-block!important;
+  opacity: 1;
+  right: 0px;
 }
 
 .child:hover > .show {
-  display: block !important;
-  position: absolute;
-  right: -408px;
   opacity: 1;
+  right: -408px;
   ul {
     border-left: #e67d22 solid 8px;
   }
