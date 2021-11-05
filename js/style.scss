@@ -1,6 +1,7 @@
 body {
   background-color: #eeeeee;
   color: #777777;
+  font-family: sans-serif;
 }
 
 .container > ul > li {
@@ -10,18 +11,18 @@ body {
 }
 ul {
   padding: 0;
+
   .search {
     background-color: white;
     padding: 10px;
     text-align: center;
+
     input {
       border-radius: 3px;
       width: 70%;
       height: 36px;
       border: 1px solid #eeeeee;
-      &::placeholder {
-        padding: 10px;
-      }
+      &::placeholder { padding: 10px; }
     }
 
     .fa-search {
@@ -49,7 +50,9 @@ ul {
       border-bottom: 1px solid #eeeeee;
       &:hover {
         position: relative;
-        & > .icon, & > .content {
+
+        & > .icon, 
+        & > .content {
           color: #e67d22;
         }
       }
@@ -66,24 +69,26 @@ ul {
     .icon {
       margin-top: 15px;
       margin-left: 40px;
-      .far, .fa, .fas {
-        font-size: 35px;
-      }
+
+      .far,
+      .fa,
+      .fas { font-size: 35px; }
     }
 
     .content {
       margin: 10px 20px;
       width: 100%;
+
       h2 {
         margin: 5px 0;
         text-transform: uppercase;
       }
 
-      p {
-        margin: 5px 0;
-      }
+      p { margin: 5px 0; }
     }
-    .arrow-left, .arrow-right {
+    
+    .arrow-left,
+    .arrow-right {
       z-index: 99;
       display: inline-block;
       position: absolute;
@@ -121,17 +126,9 @@ ul {
     .child:hover > .show {
       opacity: 1;
       right: -408px;
-      ul {
-        border-left: #e67d22 solid 8px;
-      }
+
+      ul { border-left: #e67d22 solid 8px; }
     }
   }
 }
-
-
-
-
-
-
-
 /* You can add global styles to this file, and also import other style files */

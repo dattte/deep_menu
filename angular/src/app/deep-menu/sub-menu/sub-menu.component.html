@@ -11,6 +11,6 @@
         <app-sub-menu *ngIf="menuChild.children" [subMenu]="menuChild.children"></app-sub-menu>
       </div>
     </div>
-    <span class="{{menuChild.children ? 'arrow arrow-right' : ''}}"></span>
+    <span *ngIf="menuChild.children" class="{{menuChild.children ? 'arrow arrow-right' : ''}}"></span>
   </li>
 </ul>

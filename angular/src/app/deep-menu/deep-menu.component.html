@@ -1,7 +1,7 @@
 <div class="container">
   <ul>
     <li class="{{menu.isActive === true ? 'border' : ''}}" *ngFor="let menu of deepMenu">
-      <span class="{{menu.isActive === true ? 'arrow-left' : ''}}"></span>
+      <span *ngIf="menu.isActive" class="{{menu.isActive === true ? 'arrow-left' : ''}}"></span>
       <div class="item child">
         <div class="icon">
           <i class="{{menu.icon}}"></i>
@@ -14,8 +14,8 @@
           <app-sub-menu *ngIf="menu.children" [subMenu]="menu.children"></app-sub-menu>
         </div>
       </div>
-      <span class="{{menu.isActive === true ? 'arrow-right' : ''}}"></span>
-      <span class="{{menu.children ? 'arrow arrow-right' : ''}}"></span>
+      <span *ngIf="menu.isActive" class="{{menu.isActive === true ? 'arrow-right' : ''}}"></span>
+      <span *ngIf="menu.children" class="{{menu.children ? 'arrow arrow-right' : ''}}"></span>
     </li>
     <li>
       <div class="search">
