@@ -85,12 +85,12 @@ const deepMenu = [
     },
 ]
 
-let menu = (arg) =>
+const menu = (arg) =>
     `<ul>
     ${arg.map(elem =>
         elem.children ?
             `<li>
-                    <div class="d-flex item child">
+                    <div class="item child">
                         <div class="icon">
                         <i class="${elem.icon}"></i>
                         </div>
@@ -104,7 +104,7 @@ let menu = (arg) =>
               </li>`
             : `<li class="${elem.isActive === true ? 'border' : ''}">
                 <span class="${elem.isActive === true ? 'arrow-left' : ''}"></span>
-                    <div class="d-flex item">
+                    <div class="item">
                         <div class="icon">
                         <i class="${elem.icon}"></i>
                         </div>
@@ -118,12 +118,12 @@ let menu = (arg) =>
     ).join('')}
     </ul>`
 
-let subMenu = (arg) =>
+const subMenu = (arg) =>
     `<ul>
     ${arg.map(elem =>
         elem.children ?
             `<li>
-                <div class="d-flex item child">
+                <div class="item child">
                     <div class="icon">
                     <i class="${elem.icon}"></i>
                     </div>
@@ -135,7 +135,7 @@ let subMenu = (arg) =>
                 <span class="arrow"></span>
               </li>`
             : `<li>
-                <div class="d-flex item">
+                <div class="item">
                     <div class="icon">
                     <i class="${elem.icon}"></i>
                     </div>
@@ -146,19 +146,20 @@ let subMenu = (arg) =>
             </li>`
     ).join('')}
     </ul>`
-let search = 
+const search =
     `<li>
         <div class="search">
             <input type="text" placeholder="search..."/>
             <i class="fas fa-search"></i>
         </div>
     </li>`
+
 const container = document.createElement('div');
 container.className = 'container';
 const result = menu(deepMenu);
-let frag = document.createRange().createContextualFragment(result);
-let searchbtn = document.createRange().createContextualFragment(search);
+const frag = document.createRange().createContextualFragment(result);
+const searchBtn = document.createRange().createContextualFragment(search);
 container.appendChild(frag);
 const body = document.getElementsByTagName('body')[0];
 body.appendChild(container);
-document.getElementsByTagName('ul')[0].appendChild(searchbtn);
+document.getElementsByTagName('ul')[0].appendChild(searchBtn);

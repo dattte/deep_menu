@@ -2,83 +2,83 @@ body {
   background-color: #eeeeee;
   color: #777777;
 }
-body .container > ul > li {
+
+.container > ul > li {
   border: transparent 8px solid;
   border-top: 0px;
   border-bottom: 0px;
 }
-body ul {
+
+ul {
   padding: 0;
 }
-body ul .search {
+ul .search {
   background-color: white;
   padding: 10px;
   text-align: center;
 }
-body ul .search input {
+ul .search input {
   border-radius: 3px;
   width: 70%;
   height: 36px;
   border: 1px solid #eeeeee;
 }
-body ul .search input::placeholder {
+ul .search input::placeholder {
   padding: 10px;
 }
-body ul .search .fa-search {
+ul .search .fa-search {
   background-color: #e67d22;
   padding: 10px;
   color: #fff;
   font-size: 20px;
 }
-body ul li {
-  list-style-type: none;
-  width: 400px;
-  position: relative;
-}
-body ul li .icon {
-  margin-top: 15px;
-  margin-left: 40px;
-}
-body ul li .icon .far, body ul li .icon .fa, body ul li .icon .fas {
-  font-size: 35px;
-}
-body ul li .content {
-  margin: 10px 20px;
-  width: 100%;
-}
-body ul li .content h2 {
-  margin: 5px 0;
-  text-transform: uppercase;
-}
-body ul li .content p {
-  margin: 5px 0;
-}
-body .d-flex {
-  display: flex;
-}
-body .border {
+ul .border {
   border-color: #e67d22 !important;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.14);
   z-index: 99;
 }
-body .item {
+ul li {
+  list-style-type: none;
+  width: 400px;
+  position: relative;
+}
+ul li .item {
+  display: flex;
   background-color: white;
   border-bottom: 1px solid #eeeeee;
 }
-body .item:hover {
+ul li .item:hover {
   position: relative;
 }
-body .item:hover > .icon, body .item:hover > .content {
+ul li .item:hover > .icon, ul li .item:hover > .content {
   color: #e67d22;
 }
-body .show {
+ul li .show {
   position: absolute;
   right: -400px;
   opacity: 0;
   z-index: 999;
   transition: all 0.5s ease-in-out 0s;
 }
-body .arrow-left, body .arrow-right {
+ul li .icon {
+  margin-top: 15px;
+  margin-left: 40px;
+}
+ul li .icon .far, ul li .icon .fa, ul li .icon .fas {
+  font-size: 35px;
+}
+ul li .content {
+  margin: 10px 20px;
+  width: 100%;
+}
+ul li .content h2 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+ul li .content p {
+  margin: 5px 0;
+}
+ul li .arrow-left, ul li .arrow-right {
   z-index: 99;
   display: inline-block;
   position: absolute;
@@ -89,40 +89,33 @@ body .arrow-left, body .arrow-right {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
-body .arrow-left {
+ul li .arrow-left {
   left: 0;
   border-left: 10px solid #e67d22;
 }
-body .arrow-right {
+ul li .arrow-right {
   right: 0;
   border-right: 10px solid #e67d22;
 }
-body .arrow {
+ul li .arrow {
   z-index: 99;
   transition: all 0.5s ease-in-out 0s;
-  position: absolute;
   top: 30px;
-  color: #e67d22;
   opacity: 0;
   right: 2px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #e67d22;
 }
-body .child:hover ~ span.arrow {
+ul li .child:hover ~ span.arrow {
   opacity: 1;
   right: 0px;
 }
-body .child:hover > .show {
+ul li .child:hover > .show {
   opacity: 1;
   right: -408px;
 }
-body .child:hover > .show ul {
+ul li .child:hover > .show ul {
   border-left: #e67d22 solid 8px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/* You can add global styles to this file, and also import other style files */
 
 /*# sourceMappingURL=style.css.map */

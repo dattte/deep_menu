@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let menuChild of subMenu">
+    <div class="d-flex item child">
+      <div class="icon">
+        <i class="{{menuChild.icon}}"></i>
+      </div>
+      <div class="content">
+        <h2>{{menuChild.title}}</h2>
+      </div>
+      <div class="show">
+        <app-sub-menu *ngIf="menuChild.children" [subMenu]="menuChild.children"></app-sub-menu>
+      </div>
+    </div>
+    <span class="{{menuChild.children ? 'arrow arrow-right' : ''}}"></span>
+  </li>
+</ul>
