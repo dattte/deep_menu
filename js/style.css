@@ -1,6 +1,6 @@
 body {
   background-color: #eeeeee;
-  color: #777777;
+  font-family: sans-serif;
 }
 
 .container > ul > li {
@@ -42,6 +42,10 @@ ul li {
   width: 400px;
   position: relative;
 }
+ul li a {
+  text-decoration: none;
+  color: #777777;
+}
 ul li .item {
   display: flex;
   background-color: white;
@@ -64,7 +68,9 @@ ul li .icon {
   margin-top: 15px;
   margin-left: 40px;
 }
-ul li .icon .far, ul li .icon .fa, ul li .icon .fas {
+ul li .icon .far,
+ul li .icon .fa,
+ul li .icon .fas {
   font-size: 35px;
 }
 ul li .content {
@@ -78,7 +84,8 @@ ul li .content h2 {
 ul li .content p {
   margin: 5px 0;
 }
-ul li .arrow-left, ul li .arrow-right {
+ul li .arrow-left,
+ul li .arrow-right {
   z-index: 99;
   display: inline-block;
   position: absolute;

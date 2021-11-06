@@ -1,6 +1,5 @@
 body {
   background-color: #eeeeee;
-  color: #777777;
   font-family: sans-serif;
 }
 
@@ -43,6 +42,10 @@ ul {
     list-style-type: none;
     width: 400px;
     position: relative;
+    a {
+      text-decoration: none;
+      color: #777777;
+    }
 
     .item {
       display: flex;
@@ -51,7 +54,7 @@ ul {
       &:hover {
         position: relative;
 
-        & > .icon, 
+        & > .icon,
         & > .content {
           color: #e67d22;
         }
@@ -86,7 +89,7 @@ ul {
 
       p { margin: 5px 0; }
     }
-    
+
     .arrow-left,
     .arrow-right {
       z-index: 99;
@@ -131,4 +134,5 @@ ul {
     }
   }
 }
+
 /* You can add global styles to this file, and also import other style files */

@@ -1,6 +1,5 @@
 body {
   background-color: #eeeeee;
-  color: #777777;
   font-family: sans-serif;
 }
 
@@ -43,6 +42,10 @@ ul {
     list-style-type: none;
     width: 400px;
     position: relative;
+    a {
+      text-decoration: none;
+      color: #777777;
+    }
 
     .item {
       display: flex;

@@ -91,22 +91,8 @@
             ${arg.map(elem =>
             elem.children ?
                 `<li>
-                    <div class="item child">
-                        <div class="icon">
-                            <i class="${elem.icon}"></i>
-                        </div>
-                        <div class="content">
-                            <h2>${elem.title}</h2>
-                            <p>${elem.subTitle}</p>
-                        </div>
-                        <div class="show">${creaSubMenu(elem.children)}</div>
-                    </div>
-                    <span class="arrow arrow-right"></span>
-                </li>`
-                : `
-                <li ${elem.isActive === true ? 'class="border"' : ''}>
-                    ${elem.isActive === true ? '<span class="arrow-left"></span>' : ''}
-                        <div class="item">
+                    <a href="${elem.link}">
+                        <div class="item child">
                             <div class="icon">
                                 <i class="${elem.icon}"></i>
                             </div>
@@ -114,8 +100,26 @@
                                 <h2>${elem.title}</h2>
                                 <p>${elem.subTitle}</p>
                             </div>
+                            <div class="show">${creaSubMenu(elem.children)}</div>
                         </div>
-                    ${elem.isActive === true ? '<span class="arrow-right"></span>' : ''}
+                        <span class="arrow arrow-right"></span>
+                    </a>
+                </li>`
+                : `
+                <li ${elem.isActive === true ? 'class="border"' : ''}>
+                    <a href="${elem.link}">
+                        ${elem.isActive === true ? '<span class="arrow-left"></span>' : ''}
+                            <div class="item">
+                                <div class="icon">
+                                    <i class="${elem.icon}"></i>
+                                </div>
+                                <div class="content">
+                                    <h2>${elem.title}</h2>
+                                    <p>${elem.subTitle}</p>
+                                </div>
+                            </div>
+                        ${elem.isActive === true ? '<span class="arrow-right"></span>' : ''}
+                    </a>
                 </li>`
             ).join('')}
         </ul>`
@@ -127,26 +131,30 @@
             ${arg.map(elem =>
             elem.children ?
                 `<li>
-                    <div class="item child">
-                        <div class="icon">
-                            <i class="${elem.icon}"></i>
+                    <a href="${elem.link}">
+                        <div class="item child">
+                            <div class="icon">
+                                <i class="${elem.icon}"></i>
+                            </div>
+                            <div class="content">
+                                <h2>${elem.title}</h2>
+                            </div>
+                            <div class="show">${creaSubMenu(elem.children)}</div>
                         </div>
-                        <div class="content">
-                            <h2>${elem.title}</h2>
-                        </div>
-                        <div class="show">${creaSubMenu(elem.children)}</div>
-                    </div>
-                    <span class="arrow arrow-right"></span>
+                        <span class="arrow arrow-right"></span>
+                    </a>
                 </li>`
                 : `<li>
-                    <div class="item">
-                        <div class="icon">
-                            <i class="${elem.icon}"></i>
+                    <a href="${elem.link}">
+                        <div class="item">
+                            <div class="icon">
+                                <i class="${elem.icon}"></i>
+                            </div>
+                            <div class="content">
+                                <h2>${elem.title}</h2>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h2>${elem.title}</h2>
-                        </div>
-                    </div>
+                    </a>
                 </li>`
             ).join('')}
         </ul>`
