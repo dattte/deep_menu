@@ -1,0 +1,29 @@
+<div class="container">
+  <ul>
+    <li class="{{menu.isActive === true ? 'border' : ''}}" *ngFor="let menu of deepMenu">
+      <a href="{{menu.link}}">
+        <span *ngIf="menu.isActive" class="{{menu.isActive === true ? 'arrow-left' : ''}}"></span>
+        <div class="item child">
+          <div class="icon">
+            <i class="{{menu.icon}}"></i>
+          </div>
+          <div class="content">
+            <h2>{{menu.title}}</h2>
+            <p>{{menu.subTitle}}</p>
+          </div>
+          <div class="show">
+            <app-sub-menu *ngIf="menu.children" [subMenu]="menu.children"></app-sub-menu>
+          </div>
+        </div>
+        <span *ngIf="menu.isActive" class="{{menu.isActive === true ? 'arrow-right' : ''}}"></span>
+        <span *ngIf="menu.children" class="{{menu.children ? 'arrow arrow-right' : ''}}"></span>
+      </a>
+    </li>
+    <li>
+      <div class="search">
+        <input type="text" placeholder="search..."/>
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </div>
+    </li>
+  </ul>
+</div>

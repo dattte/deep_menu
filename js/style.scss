@@ -1,67 +1,35 @@
 body {
   background-color: #eeeeee;
-  color: #777777;
+  font-family: sans-serif;
+}
 
-  .container > ul > li {
-    border: transparent 8px solid;
-    border-top: 0px;
-    border-bottom: 0px;
-  }
-  ul {
-    padding: 0;
-    .search {
-      background-color: white;
+.container > ul > li {
+  border: transparent 8px solid;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+ul {
+  padding: 0;
+
+  .search {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+
+    input {
+      border-radius: 3px;
+      width: 70%;
+      height: 36px;
+      border: 1px solid #eeeeee;
+      &::placeholder { padding: 10px; }
+    }
+
+    .fa-search {
+      background-color: #e67d22;
       padding: 10px;
-      text-align: center;
-      input {
-        border-radius: 3px;
-        width: 70%;
-        height: 36px;
-        border: 1px solid #eeeeee;
-        &::placeholder {
-          padding: 10px;
-        }
-      }
-
-      .fa-search {
-        background-color: #e67d22;
-        padding: 10px;
-        color: #fff;
-        font-size: 20px;
-      }
+      color: #fff;
+      font-size: 20px;
     }
-
-    li {
-      list-style-type: none;
-      width: 400px;
-      position: relative;
-      .icon {
-        margin-top: 15px;
-        margin-left: 40px;
-        .far, .fa, .fas {
-          font-size: 35px;
-        }
-      }
-
-      .content {
-        margin: 10px 20px;
-        width: 100%;
-        h2 {
-          margin: 5px 0;
-          text-transform: uppercase;
-        }
-
-        p {
-          margin: 5px 0;
-        }
-      }
-    }
-  }
-
-
-
-  .d-flex {
-    display: flex;
   }
 
   .border {
@@ -70,74 +38,101 @@ body {
     z-index: 99;
   }
 
-  .item {
-    background-color: white;
-    // border-top: 1px solid black;
-    border-bottom: 1px solid #eeeeee;
-    &:hover {
-      position: relative;
-      & > .icon, & > .content {
-        color: #e67d22;
+  li {
+    list-style-type: none;
+    width: 400px;
+    position: relative;
+    a {
+      text-decoration: none;
+      color: #777777;
+    }
+
+    .item {
+      display: flex;
+      background-color: white;
+      border-bottom: 1px solid #eeeeee;
+      &:hover {
+        position: relative;
+
+        & > .icon,
+        & > .content {
+          color: #e67d22;
+        }
       }
     }
-  }
 
-  .show {
-    position: absolute;
-    right: -400px;
-    opacity: 0;
-    z-index: 999;
-    transition:all 0.5s ease-in-out 0s;
-  }
+    .show {
+      position: absolute;
+      right: -400px;
+      opacity: 0;
+      z-index: 999;
+      transition:all 0.5s ease-in-out 0s;
+    }
 
-  .arrow-left, .arrow-right {
-    z-index: 99;
-    display: inline-block;
-    position: absolute;
-    top: 30px;
-    color: #e67d22;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  }
+    .icon {
+      margin-top: 15px;
+      margin-left: 40px;
 
-  .arrow-left {
-    left: 0;
-    border-left: 10px solid #e67d22;
-  }
+      .far,
+      .fa,
+      .fas { font-size: 35px; }
+    }
 
-  .arrow-right {
-    right: 0;
-    border-right: 10px solid #e67d22;
-  }
+    .content {
+      margin: 10px 20px;
+      width: 100%;
 
-  .arrow {
-    z-index: 99;
-    transition:all 0.5s ease-in-out 0s;
-    position: absolute;
-    top: 30px;
-    color: #e67d22;
-    opacity: 0;
-    right: 2px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #e67d22;
-  }
+      h2 {
+        margin: 5px 0;
+        text-transform: uppercase;
+      }
 
-  .child:hover~span.arrow {
-    opacity: 1;
-    right: 0px;
-  }
+      p { margin: 5px 0; }
+    }
 
-  .child:hover > .show {
-    opacity: 1;
-    right: -408px;
-    ul {
-      border-left: #e67d22 solid 8px;
+    .arrow-left,
+    .arrow-right {
+      z-index: 99;
+      display: inline-block;
+      position: absolute;
+      top: 30px;
+      color: #e67d22;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+
+    .arrow-left {
+      left: 0;
+      border-left: 10px solid #e67d22;
+    }
+
+    .arrow-right {
+      right: 0;
+      border-right: 10px solid #e67d22;
+    }
+
+    .arrow {
+      z-index: 99;
+      transition:all 0.5s ease-in-out 0s;
+      top: 30px;
+      opacity: 0;
+      right: 2px;
+    }
+
+    .child:hover~span.arrow {
+      opacity: 1;
+      right: 0px;
+    }
+
+    .child:hover > .show {
+      opacity: 1;
+      right: -408px;
+
+      ul { border-left: #e67d22 solid 8px; }
     }
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+/* You can add global styles to this file, and also import other style files */
